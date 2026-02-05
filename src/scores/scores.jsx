@@ -1,7 +1,7 @@
 import React from 'react';
 import './scores.css';
 
-export function Login() {
+export function Scores() {
   return (
     <main className="container-fluid bg-secondary text-center">
       <table className="table table-warning table-striped-columns">
