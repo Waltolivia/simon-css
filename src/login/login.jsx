@@ -1,15 +1,15 @@
 import React from 'react';
 import './login.css';
-import {login} from '../service';
+import {register} from '../service';
 
-export function Login() {
+export function login() {
 
   const [email, setEmail] = React.useStates('');
   const [password, setPassword] = React.useStates('');
 
   function handleSubmit(event) {
     event.preventDefault();
-    login(email, password);
+    register(email, password);
   }
 
   return (
