@@ -1,11 +1,10 @@
 import React from 'react';
-import './login.css';
 import {register} from '../service';
 
-export function login() {
+export function Login() {
 
-  const [email, setEmail] = React.useStates('');
-  const [password, setPassword] = React.useStates('');
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
 
   function handleSubmit(event) {
     event.preventDefault();

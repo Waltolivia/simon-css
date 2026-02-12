@@ -21,7 +21,7 @@ export function About() {
   const [currentQuote, setCurrentQuote] = React.useState(cannedQuotes[0]);
 
   function changeQuote() {
-    const newQuote = cannedQuotes(Math.floor(Math.random() * cannedQuotes.length));
+    const newQuote = cannedQuotes[Math.floor(Math.random() * cannedQuotes.length)];
     setCurrentQuote(newQuote);
   }
 
@@ -44,8 +44,8 @@ export function About() {
         </p>
 
         <div id="quote" className="quote-box bg-light text-dark" onClick={changeQuote}>
-          <p className="quote">(currentQuote.quote)</p>
-          <p className="author">(currentQuote.authoir)</p>
+          <p className="quote">{currentQuote.quote}</p>
+          <p className="author">{currentQuote.author}</p>
         </div>
       </div>
     </main>
