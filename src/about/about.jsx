@@ -1,6 +1,33 @@
 import React from 'react';
+import './about.css';
+
+const cannedQuotes = [
+  {
+    quote: "Talk is cheap. Show me the code!",
+    author: "Wan",
+  },
+  {
+    quote: "Hello, I am here",
+    author: "Pie",
+  },
+  {
+    quote: "Hi",
+    author: "Hello",
+  }
+]
+
 
 export function About() {
+  const [currentQuote, setCurrentQuote] = React.useState(cannedQuotes[0]);
+
+  function changeQuote() {
+    const newQuote = cannedQuotes(Math.floor(Math.random() * cannedQuotes.length));
+    setCurrentQuote(newQuote);
+  }
+
+  React.useEffect(changeQuote, []);
+
+
   return (
     <main className="container-fluid bg-secondary text-center">
       <div>
@@ -16,9 +43,9 @@ export function About() {
           educational use only. No part of this code or program should be used outside of that definition.
         </p>
 
-        <div id="quote" className="quote-box bg-light text-dark">
-          <p className="quote">Words are cheap. Show me the code.</p>
-          <p className="author">Linus Torvalds</p>
+        <div id="quote" className="quote-box bg-light text-dark" onClick={changeQuote}>
+          <p className="quote">(currentQuote.quote)</p>
+          <p className="author">(currentQuote.authoir)</p>
         </div>
       </div>
     </main>
